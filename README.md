@@ -1,2 +1,2 @@
-# Progress-STD
-kelompok KiwKiw
+# Progress-STD (E - commerce )
+kelompok KiwKiw ( Sagung Putri dan Luna Aulia )

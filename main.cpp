@@ -76,24 +76,34 @@ int main() {
             ////?
         }else if (choice==7){
             //hapus toko
+            cout<< "Nama produk yang akan dihapus: "<<endl;
         }else if (choice==8){
             //hapus produk
         }else if (choice==9){
             //hapus produk di stuatu roko
         }else if (choice ==10){
             //tampil list toko
+            showToko(listToko);
         }else if (choice==11){
             //tampil list produk
+            showItem(listItem);
         }else if (choice == 12){
-           // 12.Tampil List Toko & Produk
+           // Tampil List Toko & Produk
+           showTokoAndItem(listToko);
         }else if (choice ==13){
             //jumlah produk di toko
+            string nama;
+            cout<< "Nama toko: ";
+            cin>> nama;
+            cout<< countItemInToko(listToko,nama)<<endl;
+            // aman
         }else if (choice == 0) {
             cout << "Terima kasih telah menggunakan kiw kiw E-commerce!" << endl;
         } else {
             cout << "Pilihan tidak valid. Silakan coba lagi." << endl;
         }
     }
+
 
     return 0;
 }

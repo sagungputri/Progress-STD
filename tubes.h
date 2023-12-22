@@ -77,7 +77,7 @@ adr_item findItemInToko(ListToko L, string namaToko, string namaItem);
 void showToko(ListToko L);
 void showTokoAndItem(ListToko L);
 void showItem(ListItem L);
-int countItemInToko(ListToko L);
+int countItemInToko(ListToko L, string nama);
 
 
 #endif // TUBES_H_INCLUDED

@@ -260,7 +260,7 @@ adr_item delLasItem(ListItem L){
     }
 }
 
-adr_toko findTokobyNama(ListToko L, string nama){
+adr_toko findTokobyNama(ListToko L, string nama){ //untuk connecting
     adr_toko P= L.firstToko;
 
      while (P != NULL) {
@@ -375,13 +375,29 @@ void findToko(ListToko L) {
 
 
 void showTokoAndItem(ListToko L){
-
+    adr_toko P = L.firstToko;
+    while (P!=NULL) {
+        cout<<"Toko "<<P->info.nama_toko<<endl;
+        cout<<"Items : "<<endl;
+        list_relation LR = P->items;
+        adr_relation RQ = LR.firstRelation;
+        if (RQ!=NULL) {
+            adr_item Q = RQ->next_item;
+            int i = 1;
+            while (Q!=NULL) {
+                cout<<i<<" "<<Q->info.nama_item<<endl;
+                Q = Q->next;
+                i++;
+            }
+        } else {
+            cout<<"Toko ini kosong"<<endl;
+        }
+        P = P->next_toko;
+    }
 }
 
-void showTokoItem(ListToko L){
 
 
-}
 
 void showItem(ListItem L){
     adr_item P = L.firstItem;

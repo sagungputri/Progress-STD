@@ -69,10 +69,26 @@ int main() {
             showTokoAndItem(listToko);
         }else if (choice ==4){
             //cari detail toko
-
-        }
-
-        else if (choice == 0) {
+            findToko(listToko);
+        }else if (choice == 5){
+            ////????
+        }else if (choice ==6){
+            ////?
+        }else if (choice==7){
+            //hapus toko
+        }else if (choice==8){
+            //hapus produk
+        }else if (choice==9){
+            //hapus produk di stuatu roko
+        }else if (choice ==10){
+            //tampil list toko
+        }else if (choice==11){
+            //tampil list produk
+        }else if (choice == 12){
+           // 12.Tampil List Toko & Produk
+        }else if (choice ==13){
+            //jumlah produk di toko
+        }else if (choice == 0) {
             cout << "Terima kasih telah menggunakan kiw kiw E-commerce!" << endl;
         } else {
             cout << "Pilihan tidak valid. Silakan coba lagi." << endl;

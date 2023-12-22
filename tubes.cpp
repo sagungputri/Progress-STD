@@ -129,8 +129,8 @@ void connectTokotoItem(ListToko &L, ListItem P, string namaToko, string jenisIte
 
 
 }
-/*
-adr_toko delFirstToko(ListToko L){
+
+/*adr_toko delFirstToko(ListToko L){
     adr_toko P = L.firstToko;
     adr_relation Q = P->items.firstRelation;
     if (L.firstToko==NULL){
@@ -141,15 +141,15 @@ adr_toko delFirstToko(ListToko L){
         }else{
             L.firstToko = P->next_toko;
             while (Q != NULL){
-                delLastRel(L);
+                delLastRel(P);
             }
             P->next_toko = NULL;
 
         }
     }
     return P;//belum beres eror T_T
-}
-*/
+}*/
+
 
 adr_relation delFirstRel(list_relation L){
     adr_relation P = L.firstRelation;
@@ -424,8 +424,20 @@ adr_item findItem(ListItem L,string jenis, string nama, string ukuran, string wa
 }
 
 adr_item findItemInToko(ListToko L, string namaToko, string namaItem){
-
+    adr_toko P = findTokobyNama(L, namaToko);
+    if (P != NULL) {
+        adr_relation R = P->items.firstRelation;
+        while (R != NULL) {
+            if (R->next_item->info.nama_item == namaItem) {
+                return R->next_item;
+            }
+            R = R->next_relation;
+        }
+    }
+    return NULL; //blm cek
 }
+
+
 void showToko(ListToko L){ //blm cek
      adr_toko P= L.firstToko;
     while(P!=NULL){
@@ -436,8 +448,25 @@ void showToko(ListToko L){ //blm cek
         P= P->next_toko;
     }
 }
-int countItemInToko(ListToko L){
 
+int countItemInToko(ListToko L, string namaToko) {
+    int itemCount = 0;
+
+    adr_toko toko = findTokobyNama(L, namaToko);
+
+    if (toko != NULL) {
+        adr_relation relation = toko->items.firstRelation;
+
+        while (relation != NULL) {
+            itemCount++;
+            relation = relation->next_relation;
+        }
+    }
+
+    return itemCount;
+    //aman
 }
+
+
 
 
